@@ -1,19 +1,87 @@
-Object detection is a computer vision technique that enables machines to 
-identify and locate objects within images or videos. It involves classification 
-(what object is present) and localization (where the object is in the image). In 
-this practical, we focus on car detection using object detection techniques. 
-1. What is Object Detection? 
-Object detection is a step beyond image classification. While classification 
-tells us what object is present in an image, object detection tells us where it is 
-located using bounding boxes. 
-2
- ️. Object Detection Techniques 
-There are several techniques used in object detection, including: 
-1. Traditional Methods (Before Deep Learning) 
-2
- ️. Deep Learning-Based Methods (Modern Approach) 
-3. YOLO (You Only Look Once) for Object Detection 
-Car Detection as an Object Detection Task 
-In this practical, we focus on Cars detection, where the goal is to: 
-Detect different types of fruits in images or videos 
-Draw bounding boxes around each car. 
+Object Detection is a key area of Computer Vision that allows machines to not only identify what objects are present in an image but also determine their location. This is achieved by combining classification (what the object is) with localization (where the object is).
+
+Unlike image classification, which only answers “What is in the image?”, object detection answers “What objects are present, and where are they located?” using bounding boxes around each detected object.
+
+🔍 Object Detection Techniques
+
+Traditional Methods (Before Deep Learning)
+
+Used handcrafted features such as HOG (Histogram of Oriented Gradients), SIFT (Scale Invariant Feature Transform), and Haar Cascades.
+
+Worked for simple tasks like face or pedestrian detection.
+
+Limitations: Not robust to background noise, scale variation, or complex object shapes.
+
+Deep Learning-Based Methods (Modern Approach)
+
+Use Convolutional Neural Networks (CNNs) to automatically learn features.
+
+Examples: Faster R-CNN, SSD (Single Shot Detector), YOLO (You Only Look Once).
+
+Advantages: High accuracy, robust against variations, capable of real-time performance.
+
+YOLO (You Only Look Once)
+
+Divides the image into a grid and predicts bounding boxes + class probabilities in a single pass.
+
+Much faster than older region-proposal-based models.
+
+Suitable for real-time detection tasks like traffic surveillance and autonomous driving.
+
+⚙️ Process of Object Detection
+
+The overall process of detecting a car (or any object) can be divided into the following steps:
+
+Input Acquisition
+
+An image or video is provided as input to the detection system.
+
+Preprocessing
+
+The input frame is resized and normalized to match the model’s requirements.
+
+This reduces computational load and ensures consistent input.
+
+Feature Extraction (CNN)
+
+The deep learning model extracts features from the image, such as edges, shapes, and textures.
+
+These features help differentiate between vehicles and the background.
+
+Bounding Box Prediction
+
+The model predicts bounding boxes around potential objects.
+
+Each bounding box is associated with a confidence score.
+
+Classification
+
+The detected object is classified into categories (e.g., car, truck, bus, motorcycle).
+
+Filtering & Thresholding
+
+Detections with confidence scores below a threshold (e.g., 0.5) are discarded.
+
+Non-Maximum Suppression (NMS) removes overlapping bounding boxes to keep only the best detection.
+
+Output Visualization
+
+Bounding boxes are drawn around detected objects along with labels and confidence scores.
+
+🚘 Car Detection as an Application
+
+In this practical, car detection is implemented using YOLOv5. The goal is to:
+
+Detect different vehicle types such as cars, motorcycles, buses, and trucks.
+
+Draw bounding boxes with confidence scores around each detected vehicle.
+
+Achieve real-time detection when applied to video input.
+
+Car detection plays a vital role in:
+
+Traffic monitoring and management.
+
+Smart cities and automated surveillance systems.
+
+Autonomous driving systems.
