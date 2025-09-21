@@ -1,4 +1,4 @@
-**#Car Detection using Object Detection (YOLOv5)**
+# Car Detection using Object Detection (YOLOv5)
 Object Detection is a key area of Computer Vision that allows machines to not only identify what objects are present in an image but also determine their location. 
 This is achieved by combining classification (what the object is) with localization (where the object is).
 
